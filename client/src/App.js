@@ -1,6 +1,8 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import ProductForm from './components/ProductForm';
+import Main from './views/Main';
+import ProductDisplay from './components/ProductDisplay';
+
 
 
 
@@ -9,7 +11,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ProductForm />} />
+          <Route element={<Main />} path="/"/>
+          <Route element={<ProductDisplay />} path="/api/products/:id" />
         </Routes>
       </BrowserRouter>
       
