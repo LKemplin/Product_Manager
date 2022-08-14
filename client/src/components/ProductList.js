@@ -14,6 +14,16 @@ const ProductList = (props) => {
             console.log(err)
         })
     }, [])
+
+    const deleteHandler = (id) => {
+        axios.delete(`http://localhost:8000/api/products/${id}`)
+        .then((res) => {
+            const newProductList = productList.filter((product) => {
+                return product._id !== id
+            })
+            setProductList(newProductList)
+        }).catch((err) => console.log(err))
+    }
     
     return (
         <div>
@@ -22,6 +32,12 @@ const ProductList = (props) => {
                 <ul style={{listStyle: 'none'}}>
                     <li>
                         <Link to={`/api/products/${product._id}`}>{product.title}</Link>
+                    </li>
+                    <li>
+                        <Link to={`/api/products/edit/${product._id}`}>Edit</Link>
+                    </li>
+                    <li>
+                        <button onClick={() => deleteHandler(product._id)}>Delete Product</button>
                     </li>
                 </ul>
             ))
