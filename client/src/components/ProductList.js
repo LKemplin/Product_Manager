@@ -26,7 +26,7 @@ const ProductList = (props) => {
     }
     
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
         {
             productList.map((product)=>(
                 <ul style={{listStyle: 'none'}}>

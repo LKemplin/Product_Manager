@@ -35,13 +35,13 @@ const ProductUpdate = (props) => {
 
     return (
     <div>
-        <form onSubmit={updateHandler}>
-            <label>Title:</label>
-            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
-            <label>Price: $</label>
-            <input type="number" value={price} onChange={(e) => setPrice(e.target.value)}/>
-            <label>Description:</label>
-            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
+        <form onSubmit={updateHandler} className='form col-4 mx-auto'>
+            <label  className='form-label'>Title:</label>
+            <input type="text" value={title} className='form-control' onChange={(e) => setTitle(e.target.value)}/>
+            <label className='form-label'>Price: $</label>
+            <input type="number" value={price} className='form-control' onChange={(e) => setPrice(e.target.value)}/>
+            <label className='form-label'>Description:</label>
+            <input type="text" value={description} className='form-control' onChange={(e) => setDescription(e.target.value)}/>
             <button type="submit">Edit Product</button>
         </form>
     </div>

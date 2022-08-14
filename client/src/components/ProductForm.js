@@ -24,13 +24,13 @@ const ProductForm = () => {
 
     return (
     <div>
-        <form onSubmit={submitHandler}>
-            <label>Title:</label>
-            <input type="text" onChange={(e) => setTitle(e.target.value)} />
-            <label>Price: </label>
-            <input type="number" onChange={(e) => setPrice(e.target.value)} />
-            <label>Description:</label>
-            <input type="text" onChange={(e) => setDescription(e.target.value)}/>
+        <form className='form mx-auto col-4 bg-secondary p-3' onSubmit={submitHandler}>
+            <label className='form-label'>Title:</label>
+            <input type="text" className='form-control' onChange={(e) => setTitle(e.target.value)} />
+            <label className='form-label'>Price: </label>
+            <input type="number" className='form-control' onChange={(e) => setPrice(e.target.value)} />
+            <label className='form-label'>Description:</label>
+            <input type="text" className='form-control' onChange={(e) => setDescription(e.target.value)}/>
             <button>Add Product</button>
         </form>
     </div>
